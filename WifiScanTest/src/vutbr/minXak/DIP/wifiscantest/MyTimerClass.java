@@ -17,8 +17,7 @@ public class MyTimerClass extends TimerTask {
 	@Override
 	public void run() {
 		Log.i(TAG, "Timer task doing work");
-	      this.mWifiManger.startScan();
-
+	    this.mWifiManger.startScan();
 	}
 
 }

@@ -14,7 +14,7 @@ import android.content.IntentFilter;
 import android.util.Log;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+public class WifiActivity extends Activity {
 
 	private static final String TAG = "WifiScanning";
 
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 	private BroadcastReceiver scanReciever = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			MainActivity activity = (MainActivity) context;
+			WifiActivity activity = (WifiActivity) context;
 			activity.myScanResultHandler(activity.mWifiManager.getScanResults());
 		}
 
@@ -70,10 +70,9 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onResume() {
 		this.InitiateWifiScan();
-
-		if (this.mTimer == null) {
+	
 			this.startScanning();
-		}
+		
 		
 		super.onResume();
 	}
